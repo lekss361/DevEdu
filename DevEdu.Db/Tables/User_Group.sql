@@ -1,0 +1,31 @@
+﻿CREATE TABLE [User_Group] (
+	Id int NOT NULL IDENTITY(1,1),
+	GroupId int NOT NULL,
+	UserId int NOT NULL,
+	RoleId int NOT NULL,
+  CONSTRAINT [PK_USER_GROUP] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+
+ALTER TABLE [dbo].[User_Group] WITH CHECK ADD CONSTRAINT [User_Group_fk0] FOREIGN KEY ([GroupId]) REFERENCES [Group]([Id])
+ON UPDATE NO ACTION
+GO
+ALTER TABLE [dbo].[User_Group] CHECK CONSTRAINT [User_Group_fk0]
+GO
+ALTER TABLE [dbo].[User_Group] WITH CHECK ADD CONSTRAINT [User_Group_fk1] FOREIGN KEY ([UserId]) REFERENCES [User]([Id])
+ON UPDATE NO ACTION
+GO
+ALTER TABLE [User_Group] CHECK CONSTRAINT [User_Group_fk1]
+GO
+ALTER TABLE [dbo].[User_Group] WITH CHECK ADD CONSTRAINT [User_Group_fk2] FOREIGN KEY ([RoleId]) REFERENCES [Role]([Id])
+ON UPDATE NO ACTION
+GO
+ALTER TABLE [dbo].[User_Group] CHECK CONSTRAINT [User_Group_fk2]
+GO
+ALTER TABLE [dbo].[User_Group]
+ADD CONSTRAINT UC_GroupId_UserId_RoleId UNIQUE(GroupId, UserId, RoleId)
+GO

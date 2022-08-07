@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>DevEdu.Db</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{854e3208-bfee-450b-9051-3c55d21d9279}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath />
+    <RootNamespace>DevEdu.Db</RootNamespace>
+    <AssemblyName>DevEdu.Db</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoWarn>
+    </NoWarn>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <SuppressTSqlWarnings>70588;</SuppressTSqlWarnings>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="StoredProcedures\Comment" />
+    <Folder Include="StoredProcedures\Course" />
+    <Folder Include="StoredProcedures\Group_Lesson" />
+    <Folder Include="StoredProcedures\Group_Material" />
+    <Folder Include="StoredProcedures\Tag_Material" />
+    <Folder Include="StoredProcedures\Tag_Task" />
+    <Folder Include="StoredProcedures\Topic" />
+    <Folder Include="StoredProcedures\Student_Lesson" />
+    <Folder Include="StoredProcedures\Tag" />
+    <Folder Include="StoredProcedures\User_Group" />
+    <Folder Include="StoredProcedures\Student_Homework" />
+    <Folder Include="StoredProcedures\Lesson_Topic" />
+    <Folder Include="StoredProcedures\Material" />
+    <Folder Include="StoredProcedures\Lesson" />
+    <Folder Include="StoredProcedures\User" />
+    <Folder Include="StoredProcedures\Tag_Topic" />
+    <Folder Include="StoredProcedures\Task" />
+    <Folder Include="StoredProcedures\Notification" />
+    <Folder Include="StoredProcedures\Payment" />
+    <Folder Include="StoredProcedures\Course_Material" />
+    <Folder Include="StoredProcedures\Course_Task" />
+    <Folder Include="StoredProcedures\User_Role" />
+    <Folder Include="StoredProcedures\Group" />
+    <Folder Include="StoredProcedures\Course_Topic" />
+    <Folder Include="StoredProcedures\Homework" />
+    <Folder Include="Types" />
+    <Folder Include="Types\User-Defined Table Types" />
+    <Folder Include="StoredProcedures\StudentRating" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="Tables\User.sql" />
+    <Build Include="Tables\Role.sql" />
+    <Build Include="Tables\User_Role.sql" />
+    <Build Include="Tables\Course.sql" />
+    <Build Include="Tables\Topic.sql" />
+    <Build Include="Tables\Course_Topic.sql" />
+    <Build Include="Tables\Task.sql" />
+    <Build Include="Tables\Course_Task.sql" />
+    <Build Include="Tables\Material.sql" />
+    <Build Include="Tables\Course_Material.sql" />
+    <Build Include="Tables\Tag.sql" />
+    <Build Include="Tables\Tag_Topic.sql" />
+    <Build Include="Tables\Tag_Task.sql" />
+    <Build Include="Tables\Tag_Material.sql" />
+    <Build Include="Tables\GroupStatus.sql" />
+    <Build Include="Tables\Group.sql" />
+    <Build Include="Tables\User_Group.sql" />
+    <Build Include="Tables\Lesson.sql" />
+    <Build Include="Tables\Student_Lesson.sql" />
+    <Build Include="Tables\Lesson_Topic.sql" />
+    <Build Include="Tables\Homework_Status.sql" />
+    <Build Include="Tables\Student_Homework.sql" />
+    <Build Include="Tables\Payment.sql" />
+    <Build Include="Tables\City.sql" />
+    <Build Include="Tables\Group_Material.sql" />
+    <Build Include="Tables\Notification.sql" />
+    <Build Include="Tables\Group_Lesson.sql" />
+    <Build Include="Tables\Comment.sql" />
+    <Build Include="StoredProcedures\Comment\Comment_SelectAllByUserId.sql" />
+    <Build Include="StoredProcedures\Comment\Comment_SelectById.sql" />
+    <Build Include="StoredProcedures\Comment\Comment_Update.sql" />
+    <Build Include="StoredProcedures\Comment\Comment_Delete.sql" />
+    <Build Include="StoredProcedures\Course\Course_SelectAll.sql" />
+    <Build Include="StoredProcedures\Course\Course_SelectById.sql" />
+    <Build Include="StoredProcedures\Course\Course_Insert.sql" />
+    <Build Include="StoredProcedures\Course\Course_Update.sql" />
+    <Build Include="StoredProcedures\Course\Course_Delete.sql" />
+    <Build Include="StoredProcedures\Group_Lesson\Group_Lesson_Delete.sql" />
+    <Build Include="StoredProcedures\Group_Lesson\Group_Lesson_Insert.sql" />
+    <Build Include="StoredProcedures\Group_Material\Group_Material_Delete.sql" />
+    <Build Include="StoredProcedures\Group_Material\Group_Material_Insert.sql" />
+    <Build Include="StoredProcedures\Tag_Task\Tag_Task_Insert.sql" />
+    <Build Include="StoredProcedures\Tag_Task\Tag_Task_Delete.sql" />
+    <Build Include="StoredProcedures\Topic\Topic_Delete.sql" />
+    <Build Include="StoredProcedures\Topic\Topic_Insert.sql" />
+    <Build Include="StoredProcedures\Topic\Topic_SelectAll.sql" />
+    <Build Include="StoredProcedures\Topic\Topic_SelectById.sql" />
+    <Build Include="StoredProcedures\Topic\Topic_Update.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_Delete.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_Insert.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_UpdateIsPresent.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_UpdateAbsenceReason.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_UpdateFeedback.sql" />
+    <Build Include="StoredProcedures\Tag\Tag_Insert.sql" />
+    <Build Include="StoredProcedures\Tag\Tag_Delete.sql" />
+    <Build Include="StoredProcedures\User_Group\User_Group_Insert.sql" />
+    <Build Include="StoredProcedures\User_Group\User_Group_Delete.sql" />
+    <Build Include="StoredProcedures\Tag\Tag_SelectAll.sql" />
+    <Build Include="StoredProcedures\Tag\Tag_SelectByID.sql" />
+    <Build Include="StoredProcedures\Tag\Tag_Update.sql" />
+    <Build Include="StoredProcedures\Lesson_Topic\Lesson_Topic_Insert.sql" />
+    <Build Include="StoredProcedures\Lesson_Topic\Lesson_Topic_Delete.sql" />
+    <Build Include="StoredProcedures\Material\Material_SelectAll.sql" />
+    <Build Include="StoredProcedures\Material\Material_SelectById.sql" />
+    <Build Include="StoredProcedures\Material\Material_Insert.sql" />
+    <Build Include="StoredProcedures\Material\Material_Update.sql" />
+    <Build Include="StoredProcedures\Material\Material_Delete.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_Delete.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_Insert.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_SelectById.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_Update.sql" />
+    <Build Include="StoredProcedures\User\User_SelectAll.sql" />
+    <Build Include="StoredProcedures\User\User_SelectById.sql" />
+    <Build Include="StoredProcedures\User\User_Insert.sql" />
+    <Build Include="StoredProcedures\User\User_Update.sql" />
+    <Build Include="StoredProcedures\User\User_Delete.sql" />
+    <Build Include="StoredProcedures\Tag_Topic\Tag_Topic_Delete.sql" />
+    <Build Include="StoredProcedures\Tag_Topic\Tag_Topic_Insert.sql" />
+    <Build Include="StoredProcedures\Task\Task_Delete.sql" />
+    <Build Include="StoredProcedures\Task\Task_Insert.sql" />
+    <Build Include="StoredProcedures\Task\Task_SelectAll.sql" />
+    <Build Include="StoredProcedures\Task\Task_SelectById.sql" />
+    <Build Include="StoredProcedures\Task\Task_Update.sql" />
+    <Build Include="StoredProcedures\Notification\Notification_Delete.sql" />
+    <Build Include="StoredProcedures\Notification\Notification_Insert.sql" />
+    <Build Include="StoredProcedures\Notification\Notification_SelectAllByUserId.sql" />
+    <Build Include="StoredProcedures\Notification\Notification_SelectById.sql" />
+    <Build Include="StoredProcedures\Notification\Notification_Update.sql" />
+    <Build Include="StoredProcedures\Payment\Payment_Delete.sql" />
+    <Build Include="StoredProcedures\Payment\Payment_Insert.sql" />
+    <Build Include="StoredProcedures\Payment\Payment_SelectAllByUserId.sql" />
+    <Build Include="StoredProcedures\Payment\Payment_SelectById.sql" />
+    <Build Include="StoredProcedures\Payment\Payment_Update.sql" />
+    <Build Include="StoredProcedures\Group\Group_Delete.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectById.sql" />
+    <Build Include="StoredProcedures\Group\Group_UpdateById.sql" />
+    <Build Include="StoredProcedures\Group\Group_Insert.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectAll.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_Delete.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_Insert.sql" />
+    <Build Include="StoredProcedures\Tag_Material\Material_Tag_Delete.sql" />
+    <Build Include="StoredProcedures\Tag_Material\Material_Tag_Insert.sql" />
+    <Build Include="StoredProcedures\Material\Material_SelectAllByTagId.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_SelectAllByCourseId.sql" />
+    <Build Include="StoredProcedures\User_Role\User_Role_Insert.sql" />
+    <Build Include="StoredProcedures\User_Role\User_Role_Delete.sql" />
+    <Build Include="Tables\Homework.sql" />
+    <Build Include="StoredProcedures\Homework\Homework_Delete.sql" />
+    <Build Include="StoredProcedures\Homework\Homework_Insert.sql" />
+    <Build Include="StoredProcedures\Homework\Homework_Update.sql" />
+    <Build Include="StoredProcedures\Homework\Homework_SelectAllByGroupId.sql" />
+    <Build Include="StoredProcedures\Homework\Homework_SelectById.sql" />
+    <Build Include="StoredProcedures\Homework\Homework_SelectAllByTaskId.sql" />
+    <Build Include="StoredProcedures\Course\Course_SelectByTaskId.sql" />
+    <Build Include="StoredProcedures\Course\Course_SelectByMaterialId.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectByMaterialId.sql" />
+    <Build Include="StoredProcedures\User\User_SelectByEmail.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_DeleteAllTopicsByCourseId.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_AddMultiple.sql" />
+    <Build Include="Types\User-Defined Table Types\Course_TopicType.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_Update.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_SelectByLessonId.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_SelectAllByGroupId.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_SelectAllByTeacherId.sql" />
+    <Build Include="StoredProcedures\Comment\Comment_SelectByLessonId.sql" />
+    <Build Include="StoredProcedures\Notification\Notification_SelectAllByRoleId.sql" />
+    <Build Include="StoredProcedures\Notification\Notification_SelectAllByGroupId.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_SelectByLessonId.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_SelectAllByGroupId.sql" />
+    <Build Include="StoredProcedures\Comment\Comment_SelectByLessonId.sql" />
+    <Build Include="StoredProcedures\Lesson\Lesson_SelectAllByTeacherId.sql" />
+    <Build Include="Types\User-Defined Table Types\PaymentType.sql" />
+    <Build Include="StoredProcedures\Payment\Payment_BulkInsert.sql" />
+    <Build Include="Types\User-Defined Table Types\IdType.sql" />
+    <Build Include="StoredProcedures\Payment\Payment_SelectBySeveralId.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectAllByUserId.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectAllByTaskId.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_SelectAllFeedbackByLessonId.sql" />
+    <Build Include="StoredProcedures\Student_Lesson\Student_Lesson_SelectByLessonAndUserId.sql" />
+    <Build Include="StoredProcedures\Topic\Topic_SelectByCourseId.sql" />
+    <Build Include="StoredProcedures\Task\Task_SelectByCourseId.sql" />
+    <Build Include="StoredProcedures\Material\Material_SelectByCourseId.sql" />
+    <Build Include="StoredProcedures\Comment\Comment_Insert.sql" />
+    <Build Include="StoredProcedures\Group\Group_UpdateGroupStatus.sql" />
+    <Build Include="StoredProcedures\User\User_SelectByGroupIdAndRole.sql" />
+    <Build Include="Tables\RatingType.sql" />
+    <Build Include="Tables\StudentRating.sql" />
+    <Build Include="StoredProcedures\StudentRating\StudentRating_Insert.sql" />
+    <Build Include="StoredProcedures\StudentRating\StudentRating_Delete.sql" />
+    <Build Include="StoredProcedures\StudentRating\StudentRating_SelectAll.sql" />
+    <Build Include="StoredProcedures\StudentRating\StudentRating_SelectById.sql" />
+    <Build Include="StoredProcedures\StudentRating\StudentRating_SelectByUserId.sql" />
+    <Build Include="StoredProcedures\StudentRating\StudentRating_Update.sql" />
+    <Build Include="StoredProcedures\StudentRating\StudentRating_SelectByGroupId.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectByCourseId.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_SelectById.sql" />
+    <Build Include="StoredProcedures\Course_Topic\Course_Topic_SelectBySeveralId.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectAllByUserId.sql" />
+    <Build Include="StoredProcedures\Group\Group_SelectAllByLessonId.sql" />
+    <Build Include="StoredProcedures\Student_Homework\Student_Homework_Delete.sql" />
+    <Build Include="StoredProcedures\Student_Homework\Student_Homework_Insert.sql" />
+    <Build Include="StoredProcedures\Student_Homework\Student_Homework_SelectAllAnswersByTaskId.sql" />
+    <Build Include="StoredProcedures\Student_Homework\Student_Homework_UpdateAnswer.sql" />
+    <Build Include="StoredProcedures\Student_Homework\Student_Homework_UpdateStatusId.sql" />
+    <Build Include="StoredProcedures\Student_Homework\Student_Homework_SelectAllAnswersByUserId.sql" />
+    <Build Include="StoredProcedures\Student_Homework\Student_Homework_SelectById.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="StoredProcedures\Course_Material\Course_Material_Delete.sql" />
+    <None Include="StoredProcedures\Course_Material\Course_Material_Insert.sql" />
+    <None Include="StoredProcedures\Course_Task\Course_Task_Delete.sql" />
+    <None Include="StoredProcedures\Course_Task\Course_Task_Insert.sql" />
+    <None Include="DevEdu.Db.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <RefactorLog Include="DevEdu.Db.refactorlog" />
+  </ItemGroup>
+</Project>

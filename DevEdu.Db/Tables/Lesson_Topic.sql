@@ -1,0 +1,24 @@
+﻿CREATE TABLE [Lesson_Topic] (
+	Id int NOT NULL IDENTITY(1,1),
+	TopicId int NOT NULL,
+	LessonId int NOT NULL,
+  CONSTRAINT [PK_LESSON_TOPIC] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+go
+
+ALTER TABLE [Lesson_Topic] WITH CHECK ADD CONSTRAINT [Lesson_Topic_fk0] FOREIGN KEY ([TopicId]) REFERENCES [Topic]([Id])
+ON UPDATE NO ACTION
+GO
+ALTER TABLE [Lesson_Topic] CHECK CONSTRAINT [Lesson_Topic_fk0]
+GO
+ALTER TABLE [Lesson_Topic] WITH CHECK ADD CONSTRAINT [Lesson_Topic_fk1] FOREIGN KEY ([LessonId]) REFERENCES [Lesson]([Id])
+ON UPDATE NO ACTION
+GO
+ALTER TABLE [Lesson_Topic] CHECK CONSTRAINT [Lesson_Topic_fk1]
+GO
+ALTER TABLE [Lesson_Topic] ADD CONSTRAINT UC_TopicId_ClassId UNIQUE(TopicId, LessonId)
+GO
